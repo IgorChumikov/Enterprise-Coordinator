@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 // MARK: - Generic Tab Coordinator
 final class TabCoordinator<R: Route>: ObservableObject {
@@ -23,10 +24,10 @@ final class TabCoordinator<R: Route>: ObservableObject {
 final class AppCoordinator: ObservableObject {
     @Published var selectedTab: AppTab = .home
     
-    let home = TabCoordinator<HomeRoute>()
-    let catalog = TabCoordinator<CatalogRoute>()
-    let cart = TabCoordinator<CartRoute>()
-    let profile = TabCoordinator<ProfileRoute>()
+    var home = TabCoordinator<HomeRoute>()
+    var catalog = TabCoordinator<CatalogRoute>()
+    var cart = TabCoordinator<CartRoute>()
+    var profile = TabCoordinator<ProfileRoute>()
     
     @Published var globalModal: AppModal?
     
