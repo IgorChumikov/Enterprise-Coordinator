@@ -13,12 +13,25 @@ struct ProfileView: View {
     
     var body: some View {
         List {
-            Section("Меню") {
+            // ✅ Старые пункты меню (не изменились!)
+            Section("Основное") {
                 Button("⚙️ Настройки") {
                     coordinator.push(.settings)
                 }
-                Button("📋 История заказов") {
+                
+                Button("📋 История заказов (SwiftUI старый)") {
                     coordinator.push(.orderHistory)
+                }
+            }
+            
+            // ✨ НОВЫЕ пункты меню
+            Section("Новые экраны") {
+                Button("📋 История заказов (UIKit) 🆕") {
+                    coordinator.push(.orderHistoryUIKit)
+                }
+                
+                Button("✅ Завершенные заказы (SwiftUI) 🆕") {
+                    coordinator.push(.completedOrders)
                 }
             }
             
