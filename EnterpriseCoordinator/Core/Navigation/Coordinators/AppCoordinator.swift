@@ -19,6 +19,7 @@ final class AppCoordinator: ObservableObject {
     
     // Глобальные модалки
     @Published var globalModal: AppModal?
+    @Published var globalFullScreenCover: AppFullScreenCover?
     
     // MARK: - Межтабовая навигация
     
@@ -35,4 +36,8 @@ final class AppCoordinator: ObservableObject {
     func showGlobalModal(_ modal: AppModal) {
         globalModal = modal
     }
+    
+    func showGlobalFullScreenCover(_ cover: AppFullScreenCover) {
+          globalFullScreenCover = cover
+      }
 }

@@ -17,6 +17,12 @@ struct CartTab: View {
                 .navigationDestination(for: CartRoute.self) { route in
                     coordinator.build(route)
                 }
+                .sheet(item: $coordinator.sheet) { modal in
+                    app.buildModal(modal)
+                }
+                .fullScreenCover(item: $coordinator.fullScreenCover) { cover in
+                    app.buildFullScreenCover(cover)
+                }
         }
     }
 }

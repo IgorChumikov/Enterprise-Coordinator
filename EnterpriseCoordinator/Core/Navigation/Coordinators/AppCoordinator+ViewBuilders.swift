@@ -6,15 +6,29 @@
 //
 
 import SwiftUI
-import Combine
 
+// MARK: - Modal Builders
 extension AppCoordinator {
-    @ViewBuilder func buildModal(_ modal: AppModal) -> some View {
+    @ViewBuilder
+    func buildModal(_ modal: AppModal) -> some View {
         switch modal {
-        case .login: LoginView()
-        case .quickView(let id): QuickView(productId: id)
+        case .login:
+            LoginView()
+        case .quickView(let id):
+            QuickView(productId: id)
+        }
+    }
+    
+    // ✨ Full Screen Cover Builder
+    @ViewBuilder
+    func buildFullScreenCover(_ cover: AppFullScreenCover) -> some View {
+        switch cover {
+        case .onboarding:
+            OnboardingView()
+        case .camera:
+            CameraView()
+        case .videoPlayer(let url):
+            VideoPlayerView(url: url)
         }
     }
 }
-
-

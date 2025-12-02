@@ -78,7 +78,9 @@ extension OrderHistoryUIKitViewController: UITableViewDelegate {
         let order = orders[indexPath.row]
         
         // ✨ Переход на UIKit детали заказа
-        coordinator.push(.orderDetailUIKit(id: order.id))
+       // coordinator.push(.orderDetailUIKit(id: order.id))
+      //  coordinator.presentSheet(.quickView(productId: order.id))
+        coordinator.presentFullScreenCover(.onboarding)
     }
 }
 

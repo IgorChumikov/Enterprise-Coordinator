@@ -20,6 +20,9 @@ struct CatalogTab: View {
                 .sheet(item: $coordinator.sheet) { modal in
                     app.buildModal(modal)
                 }
+                .fullScreenCover(item: $coordinator.fullScreenCover) { cover in
+                    app.buildFullScreenCover(cover)
+                }
         }
     }
 }

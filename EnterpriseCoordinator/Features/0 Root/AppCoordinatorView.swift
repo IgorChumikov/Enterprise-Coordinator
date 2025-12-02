@@ -40,5 +40,8 @@ struct AppCoordinatorView: View {
         .sheet(item: $coordinator.globalModal) { modal in
             coordinator.buildModal(modal)
         }
+        .fullScreenCover(item: $coordinator.globalFullScreenCover) { cover in
+                   coordinator.buildFullScreenCover(cover)
+               }
     }
 }
